@@ -35,7 +35,7 @@ class Program
                             char operation = '+';
                             RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(difficulty, operation, result);
+                            bool loss = GameRound(result);
                             if(loss)
                             {
                                 break;
@@ -58,7 +58,7 @@ class Program
                             char operation = '-';
                             RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(difficulty, operation, result);
+                            bool loss = GameRound(result);
                             if (loss)
                             {
                                 break;
@@ -81,7 +81,7 @@ class Program
                             char operation = '*';
                             RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(difficulty, operation, result);
+                            bool loss = GameRound(result);
                             if (loss)
                             {
                                 break;
@@ -104,7 +104,7 @@ class Program
                             char operation = '/';
                             RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(difficulty, operation, result);
+                            bool loss = GameRound(result);
                             if (loss)
                             {
                                 break;
@@ -128,7 +128,7 @@ class Program
                             char operation = (num == 1)? '+': (num == 2)? '-' : (num == 3)? '*': '/';
                             RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(difficulty, operation, result);
+                            bool loss = GameRound(result);
                             if (loss)
                             {
                                 break;
@@ -244,7 +244,7 @@ class Program
 
         }
 
-        static bool GameRound(int difficulty, char operation, int result)
+        static bool GameRound(int result)
         {
             Console.Write("Result: ");
             if (result != GetUserInput())
