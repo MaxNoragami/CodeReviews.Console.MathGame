@@ -33,9 +33,9 @@ class Program
                         for(int i = 0; i < amountOfQuestions; i++)
                         {   
                             char operation = '+';
-                            randomGenerate(randomValues, difficulty, operation);
+                            RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(randomValues, difficulty, operation, result);
+                            bool loss = GameRound(difficulty, operation, result);
                             if(loss)
                             {
                                 break;
@@ -56,9 +56,9 @@ class Program
                         for (int i = 0; i < amountOfQuestions; i++)
                         {
                             char operation = '-';
-                            randomGenerate(randomValues, difficulty, operation);
+                            RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(randomValues, difficulty, operation, result);
+                            bool loss = GameRound(difficulty, operation, result);
                             if (loss)
                             {
                                 break;
@@ -79,9 +79,9 @@ class Program
                         for (int i = 0; i < amountOfQuestions; i++)
                         {
                             char operation = '*';
-                            randomGenerate(randomValues, difficulty, operation);
+                            RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(randomValues, difficulty, operation, result);
+                            bool loss = GameRound(difficulty, operation, result);
                             if (loss)
                             {
                                 break;
@@ -102,9 +102,9 @@ class Program
                         for (int i = 0; i < amountOfQuestions; i++)
                         {
                             char operation = '/';
-                            randomGenerate(randomValues, difficulty, operation);
+                            RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(randomValues, difficulty, operation, result);
+                            bool loss = GameRound(difficulty, operation, result);
                             if (loss)
                             {
                                 break;
@@ -126,9 +126,9 @@ class Program
                         {   
                             int num = random.Next(1,4);
                             char operation = (num == 1)? '+': (num == 2)? '-' : (num == 3)? '*': '/';
-                            randomGenerate(randomValues, difficulty, operation);
+                            RandomGenerate(randomValues, difficulty, operation);
                             int result = mathLogic.MathOperation(randomValues, operation);
-                            bool loss = GameRound(randomValues, difficulty, operation, result);
+                            bool loss = GameRound(difficulty, operation, result);
                             if (loss)
                             {
                                 break;
@@ -143,7 +143,7 @@ class Program
                     case 6:
                     {
                         Console.WriteLine("\nHistory:");
-                        foreach(string registration in mathLogic.history)
+                        foreach(string registration in mathLogic.History)
                         {
                             Console.WriteLine(registration);
                         }
@@ -217,7 +217,7 @@ class Program
             Console.WriteLine("\"EXIT\" to exit");
         }
 
-        static void randomGenerate(int[] randomValues, int difficulty, char operation)
+        static void RandomGenerate(int[] randomValues, int difficulty, char operation)
         {
             bool validDivision = false;
             do
@@ -244,7 +244,7 @@ class Program
 
         }
 
-        static bool GameRound(int[] randomValues, int difficulty, char operation, int result)
+        static bool GameRound(int difficulty, char operation, int result)
         {
             Console.Write("Result: ");
             if (result != GetUserInput())

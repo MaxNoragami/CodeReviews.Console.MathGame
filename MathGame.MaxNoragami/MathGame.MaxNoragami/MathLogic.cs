@@ -2,7 +2,7 @@ namespace MaxMathLogic
 {
     class MathLogic
     {
-        public List<string> history {get;set;} = new List<string>();
+        public List<string> History {get;set;} = new List<string>();
 
         public int MathOperation(int[] randomValues, char operation)
         {
@@ -12,25 +12,25 @@ namespace MaxMathLogic
                 case '+':
                 {
                     Console.WriteLine($"{randomValues[0]} + {randomValues[1]} = ?");
-                    history.Add($"{randomValues[0]} + {randomValues[1]} = {randomValues[0] + randomValues[1]}");
+                    History.Add($"{randomValues[0]} + {randomValues[1]} = {randomValues[0] + randomValues[1]}");
                     return randomValues[0] + randomValues[1];
                 }
                 case '-':
                 {
                     Console.WriteLine($"{randomValues[0]} - {randomValues[1]} = ?");
-                    history.Add($"{randomValues[0]} - {randomValues[1]} = {randomValues[0] - randomValues[1]}");
+                    History.Add($"{randomValues[0]} - {randomValues[1]} = {randomValues[0] - randomValues[1]}");
                     return randomValues[0] - randomValues[1];
                 }
                 case '*':
                 {
                     Console.WriteLine($"{randomValues[0]} * {randomValues[1]} = ?");
-                    history.Add($"{randomValues[0]} * {randomValues[1]} = {randomValues[0] * randomValues[1]}");
+                    History.Add($"{randomValues[0]} * {randomValues[1]} = {randomValues[0] * randomValues[1]}");
                     return randomValues[0] * randomValues[1];
                 }
                 case '/':
                 {
                     Console.WriteLine($"{randomValues[0]} / {randomValues[1]} = ?");
-                    history.Add($"{randomValues[0]} / {randomValues[1]} = {randomValues[0] / randomValues[1]}");
+                    History.Add($"{randomValues[0]} / {randomValues[1]} = {randomValues[0] / randomValues[1]}");
                     return randomValues[0] / randomValues[1];
                 }
             }
